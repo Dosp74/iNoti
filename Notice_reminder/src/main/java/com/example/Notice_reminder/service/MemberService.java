@@ -4,6 +4,7 @@ import com.example.Notice_reminder.dto.MemberDTO;
 import com.example.Notice_reminder.entity.MemberEntity;
 import com.example.Notice_reminder.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -15,13 +16,12 @@ import java.util.Optional;
 public class MemberService {
 
     private final MemberRepository memberRepository; // 먼저 jpa, mysql dependency 추가
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public void save(MemberDTO memberDTO) {
-        // repsitory의 save 메서드 호출
-        MemberEntity memberEntity = MemberEntity.toMemberEntity(memberDTO);
-        memberRepository.save(memberEntity);
-        //Repository의 save메서드 호출 (조건. entity객체를 넘겨줘야 함)
-
+    public Long save(MemberDTO memberDTO) {
+        MemberEntity encoding_entity=MemberEntity.toMemberEntity(memberDTO);
+        encoding_entity.setMemberPassword(bCryptPasswordEncoder.encode(encoding_entity.getMemberPassword()));
+        return memberRepository.save(encoding_entity).getId();
     }
 
     public List<MemberDTO> findAll() {
@@ -35,7 +35,7 @@ public class MemberService {
         return memberDTOList;
 
     }
-
+/*
     public MemberDTO login(MemberDTO memberDTO){ //entity객체는 service에서만
         Optional<MemberEntity> byMemberEmail = memberRepository.findByMemberEmail(memberDTO.getMemberEmail());
         if(byMemberEmail.isPresent()){
@@ -55,7 +55,7 @@ public class MemberService {
             return null;
         }
     }
-
+*/
     public MemberDTO findById(Long id) {
         // 하나 조회할때 optional로 감싸줌
         Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(id);
