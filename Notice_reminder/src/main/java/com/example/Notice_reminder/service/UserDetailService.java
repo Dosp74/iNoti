@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class UserDetailService implements UserDetailsService { //스프링 시큐리티에서 사용자의 정보를 가져오는 UserDetailsService 인터페이스 구현
+public class UserDetailService implements UserDetailsService { //UserDetailsService: 스프링 시큐리티에서 사용자 정보를 가져오는 인터페이스
     private final MemberRepository memberRepository;
 
-    //email로 사용자의 정보를 가져오는 메소드
+    //email을 통해 MemberEntity 반환
     @Override
     public MemberEntity loadUserByUsername(String email){
         return memberRepository.findByMemberEmail(email)

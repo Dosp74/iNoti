@@ -17,8 +17,8 @@ import java.util.List;
 @Setter
 @Getter
 @Table(name = "member_table") //database에 해당 이름의 테이블 생성
-@NoArgsConstructor(access = AccessLevel.PROTECTED) //기본 생성자
-public class MemberEntity implements UserDetails { //table 역할
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class MemberEntity implements UserDetails { //UserDetails 인터페이스를 구현하여 인증 객체로 사용
     //jpa ==> database를 객체처럼 사용 가능
 
     @Id //id필드 기본키로 지정
@@ -26,13 +26,13 @@ public class MemberEntity implements UserDetails { //table 역할
     @Column(updatable = false) //id 변경 불가
     private Long id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true, updatable = false) //이메일 null값 불가, 중복 불가, 변경 불가
     private String memberEmail;
 
-    @Column
+    @Column(nullable = false)
     private String memberPassword;
 
-    @Column
+    @Column(nullable = false, updatable = false)
     private String memberName;
 
     public static MemberEntity toMemberEntity(MemberDTO memberDTO){
@@ -46,7 +46,9 @@ public class MemberEntity implements UserDetails { //table 역할
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities(){
-        return List.of(new SimpleGrantedAuthority("user")); //사용자 권한 반환, 이후 관리자 권한 구성 필요
+        if("root".equals(this.getMemberEmail()))
+            return List.of(new SimpleGrantedAuthority("admin")); //이메일이 "root"라면 관리자 권한 인가
+        return List.of(new SimpleGrantedAuthority("user")); //이외에는 사용자 권한 인가
     }
 
     @Override

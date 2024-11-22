@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>iNoti_detail</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>id</th>
+    <th>email</th>
+    <th>이름</th>
+  </tr>
+  <tr>
+    <td th:text="${memberId}"></td>
+    <td th:text="${memberEmail}"></td>
+    <td th:text="${memberName}"></td>
+  </tr>
+</table>
+<form th:action="@{|/member/delete/${memberId}|}" method="post" onsubmit="return confirm('정말로 회원 탈퇴 하시겠습니까?')">
+  <input type="hidden" name="_method" value="DELETE">
+  <button type="submit" class="btn btn-secondary">회원탈퇴</button>
+</form>
+</body>
+</html>
