@@ -110,7 +110,9 @@
         <td th:text="${member.memberEmail}"></td>
         <td th:text="${member.memberName}"></td>
         <td class="actions">
-            <a th:href="@{|/member/delete/${member.id}|}">삭제</a>
+            <form th:action="@{/member/delete/{id}(id=${member.id})}" method="post" style="display: inline;">
+                <button type="submit">삭제</button>
+            </form>
         </td>
     </tr>
     </tbody>
