@@ -2,16 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>iNoti_login</title>
-    <!-- Favicon 설정 -->
-    <link rel="icon" href="/uni_04.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- 스타일시트 링크 -->
 </head>
 <body>
-<form action="/member/login" method="post">
-    이메일 : <input type="text" name="memberEmail"> <br>
-    비밀번호 : <input type="password" name="memberPassword"> <br>
-    <input type="submit" value="로그인">
-</form>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form action="/member/login" method="post">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="username" required placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+        </div>
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- 회원가입 링크 -->
+    <p>Don't have an account? <a href="/member/signup">Sign up here</a></p>
+</div>
+
 </body>
 </html>
-<!-- login.html -->
