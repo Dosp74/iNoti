@@ -6,7 +6,10 @@
 </head>
 <body>
 <h1>키워드 등록 성공</h1>
-<p th:text="${message}"></p>
+<!-- 성공 메시지 출력 -->
+<div>
+    <p th:text="${message}" style="color: green;"></p>
+</div>
 <a href="/keyword/list">키워드 목록 보기</a>
 <a href="/member/main">메인 화면으로 돌아가기</a>
 </body>

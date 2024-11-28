@@ -9,7 +9,15 @@
 <body>
     <button type="button" class="btn btn-secondary" onclick="location.href='/member/info'">정보 조회</button>
     <button type="button" class="btn btn-secondary" onclick="location.href='/member/logout'">로그아웃</button>
+    <!-- 오류 메시지 출력 -->
+    <div th:if="${errorMessage}" style="color: red;">
+        <p th:text="${errorMessage}"></p>
+    </div>
 
+    <!-- 성공 메시지 출력 -->
+    <div th:if="${successMessage}" style="color: green;">
+        <p th:text="${successMessage}"></p>
+    </div>
     <!-- 키워드 등록 폼 -->
     <h2>키워드 등록</h2>
     <form action="/keyword/add" method="post">

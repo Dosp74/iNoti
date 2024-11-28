@@ -1,5 +1,6 @@
 package com.example.Notice_reminder.controller;
 
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.Notice_reminder.entity.KeywordEntity;
 import com.example.Notice_reminder.service.KeywordService;
 import org.springframework.stereotype.Controller;
@@ -25,14 +26,16 @@ public class KeywordController {
         // 현재 로그인된 사용자의 이메일 가져오기
         String memberEmail = principal.getName();
 
-        // 키워드 저장
-        keywordService.saveKeyword(keyword, memberEmail);
+        // 키워드 저장 시도
+        boolean isSaved = keywordService.saveKeyword(keyword, memberEmail);
 
-        // 모델에 메시지 추가
-        model.addAttribute("message", keyword + " 키워드가 등록되었습니다!");
-
-        // 성공 페이지로 이동
-        return "keyword_success";
+        if (isSaved) {
+            model.addAttribute("successMessage", keyword + " 키워드가 성공적으로 등록되었습니다!");
+            return "keyword_success"; // 성공 시 keyword_success.html로 이동
+        } else {
+            model.addAttribute("errorMessage", "중복 키워드를 등록하셨네요! 다른 키워드를 입력해주세요 :)");
+            return "main"; // 실패 시 main.html에 머무르며 메시지를 표시
+        }
     }
 
     @GetMapping("/keyword/list")
