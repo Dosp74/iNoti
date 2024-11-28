@@ -45,9 +45,16 @@ public class MemberService {
     }
 
     public MemberDTO findByEmail(String email) {
-        // 하나 조회할때 optional로 감싸줌
+        // 이메일로 MemberEntity 조회
         Optional<MemberEntity> optionalMemberEntity = memberRepository.findByMemberEmail(email);
-        return MemberDTO.toMemberDTO(optionalMemberEntity.get()); // optional을 벗겨내서 entity -> dto 변환
+
+        // MemberEntity가 존재하지 않으면 예외 처리
+        MemberEntity memberEntity = optionalMemberEntity.orElseThrow(() ->
+                new IllegalArgumentException("Member with email " + email + " not found.")
+        );
+
+        // Entity를 DTO로 변환하여 반환
+        return MemberDTO.toMemberDTO(memberEntity);
     }
 
     public void deleteByid(Long id) {
