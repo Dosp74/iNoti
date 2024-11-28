@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a1ca108-8f6c-4fb2-9f30-47bc8a659ea6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Notice_reminder.main.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/controller/MailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/MailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/application.properties.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/dto/NoticeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/entity/NoticeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/repository/NoticeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/CrawlerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/NoticeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notice_reminder/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/NoticeReminderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/NoticeReminderApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,21 +52,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Dosp74"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dosp74&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/cnslab-classroom/team-project-6.git",
-    "accountId": "d3b7af11-f9b2-4f33-81d1-55a68d4598e8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/cnslab-classroom/team-project-6.git&quot;,
+    &quot;accountId&quot;: &quot;d3b7af11-f9b2-4f33-81d1-55a68d4598e8&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2pF8faRbiq6opIf30BMHwbrbicq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -82,9 +80,9 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "feature__js",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/mailtest/team-project-6",
+    "last_opened_file_path": "C:/Users/01079/OneDrive/바탕 화면/team-project-6",
     "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
