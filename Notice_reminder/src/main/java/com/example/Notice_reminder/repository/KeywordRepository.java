@@ -1,11 +1,15 @@
 package com.example.Notice_reminder.repository;
 
-import org.springframework.stereotype.Repository;
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.Notice_reminder.entity.KeywordEntity;
+import com.example.Notice_reminder.entity.MemberEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
+import java.util.List;
+
 public interface KeywordRepository extends JpaRepository<KeywordEntity, Long> {
+    List<KeywordEntity> findByMember(MemberEntity member);
 }
+
+
 
 
