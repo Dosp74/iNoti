@@ -5,15 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a1ca108-8f6c-4fb2-9f30-47bc8a659ea6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/dto/NoticeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/entity/NoticeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/repository/NoticeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/CrawlerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/NoticeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/config/CustomAuthenticationSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/controller/KeywordController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/entity/KeywordEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/repository/KeywordRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/KeywordService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/UserDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/static/uni_04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/keyword_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/keyword_success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Notice_reminder.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Notice_reminder.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Notice_reminder/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/NoticeReminderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/NoticeReminderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/controller/MailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/controller/MailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/dto/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/dto/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/entity/MemberEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/entity/MemberEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/repository/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/repository/NoticeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/repository/NoticeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/NoticeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/java/com/example/Notice_reminder/service/NoticeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notice_reminder/src/main/resources/templates/save.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,12 +105,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Notice_reminder [:com.example.Notice_reminder.NoticeReminderApplication.main()].executor": "Run",
+    "Gradle.Notice_reminder.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "feature__js",
+    "git-widget-placeholder": "Merging feature__js",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/01079/OneDrive/바탕 화면/team-project-6",
+    "last_opened_file_path": "C:/Users/01079/OneDrive/바탕 화면/workedit/team-project-6(je_sa_merge)",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",

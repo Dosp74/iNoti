@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>키워드 목록</title>
+</head>
+<body>
+<h1>등록된 키워드 목록</h1>
+<ul>
+    <li th:each="keyword : ${keywords}">
+        <span th:text="${keyword.keyword}"></span>
+        <span>(등록일: <span th:text="${keyword.createdAt}"></span>)</span>
+        <form th:action="@{/keyword/delete}" method="post" style="display: inline;">
+            <input type="hidden" th:name="id" th:value="${keyword.id}" />
+            <button type="submit">삭제</button>
+        </form>
+    </li>
+</ul>
+<a href="/member/main">메인 화면으로 돌아가기</a>
+</body>
+</html>
+

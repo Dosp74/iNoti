@@ -25,7 +25,7 @@ public class MailService {
 
             mailSender.send(message);
 
-            System.out.println("메일 발송 완료!");
+            logger.info("메일 발송 완료! to: {}", to);
         } catch (MailException e) {
             logger.error("메일 발송 실패", e);
         }

@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Notice_reminder.iml" filepath="$PROJECT_DIR$/.idea/modules/Notice_reminder.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Notice_reminder.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Notice_reminder.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Notice_reminder.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Notice_reminder.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/team-project-6.iml" filepath="$PROJECT_DIR$/.idea/team-project-6.iml" />
     </modules>
   </component>
