@@ -50,5 +50,11 @@ public class MemberService {
     public void deleteByid(Long id) {
         memberRepository.deleteById(id);
     }
+
+    public List<String> findAllEmails() {
+        return memberRepository.findAll().stream()
+                .map(MemberEntity::getMemberEmail) // MemberEntity에서 memberEmail 추출
+                .toList();
+    }
 }
 //MemberService.class
