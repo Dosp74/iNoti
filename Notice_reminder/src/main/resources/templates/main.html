@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>iNoti_main</title>
+    <!-- Favicon 설정 -->
+    <link rel="icon" href="/uni_04.png" type="image/png">
 </head>
 <body>
-<button type="button" class="btn btn-secondary" onclick="location.href='/member/info'">정보 조회</button>
-<button type="button" class="btn btn-secondary" onclick="location.href='/member/logout'">로그아웃</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/member/info'">정보 조회</button>
+    <button type="button" class="btn btn-secondary" onclick="location.href='/member/logout'">로그아웃</button>
+    <!-- 오류 메시지 출력 -->
+    <div th:if="${errorMessage}" style="color: red;">
+        <p th:text="${errorMessage}"></p>
+    </div>
+
+    <!-- 성공 메시지 출력 -->
+    <div th:if="${successMessage}" style="color: green;">
+        <p th:text="${successMessage}"></p>
+    </div>
+    <!-- 키워드 등록 폼 -->
+    <h2>키워드 등록</h2>
+    <form action="/keyword/add" method="post">
+        <label for="keyword">키워드 입력:</label>
+        <input type="text" id="keyword" name="keyword" required>
+        <button type="submit" class="btn btn-primary">등록</button>
+    </form>
+    <a href="/member/main">메인 화면으로 돌아가기</a>
 </body>
 </html>

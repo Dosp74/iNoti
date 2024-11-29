@@ -10,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,10 +20,9 @@ import java.util.List;
 @Table(name = "member_table") //database에 해당 이름의 테이블 생성
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberEntity implements UserDetails { //UserDetails 인터페이스를 구현하여 인증 객체로 사용
-    //jpa ==> database를 객체처럼 사용 가능
 
-    @Id //id필드 기본키로 지정
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false) //id 변경 불가
     private Long id;
 
@@ -34,6 +34,9 @@ public class MemberEntity implements UserDetails { //UserDetails 인터페이스
 
     @Column(nullable = false, updatable = false)
     private String memberName;
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<KeywordEntity> keywords = new ArrayList<>();
 
     public static MemberEntity toMemberEntity(MemberDTO memberDTO){
         MemberEntity memberEntity = new MemberEntity();
@@ -81,4 +84,5 @@ public class MemberEntity implements UserDetails { //UserDetails 인터페이스
         return true;
     }
 }
+
 //MemberEntity.class
