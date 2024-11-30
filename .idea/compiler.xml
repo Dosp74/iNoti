@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
@@ -11,10 +10,5 @@
         <module name="Notice_reminder.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Notice_reminder" target="17" />
-      <module name="Notice_reminder.main" target="17" />
-      <module name="Notice_reminder.test" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
