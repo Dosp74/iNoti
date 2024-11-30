@@ -59,7 +59,7 @@ public class WebSecurityConfig {
 
     @Bean
     //비밀번호 인코더 빈으로 등록
-    public BCryptPasswordEncoder bCryptPasswordEncoder() { //비밀번호 인코더 빈으로 등록
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
         return new BCryptPasswordEncoder();
     }
 }
