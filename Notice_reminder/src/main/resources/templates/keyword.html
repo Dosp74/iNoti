@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키워드 등록</title>
+    <!-- Bootstrap CSS (선택사항: 스타일링용) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        // 성공 팝업
+        function showSuccessAndRedirect() {
+            alert("등록 성공하였습니다!");
+            window.location.href = "/member/main";
+        }
+
+        // 실패 팝업
+        function showFailureAndStay() {
+            alert("등록에 실패하였습니다.");
+            window.location.href = "/keyword/add";
+        }
+    </script>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">키워드 등록</h2>
+    <form action="/keyword/add" method="post" th:onsubmit="return handleSubmit()" id="keywordForm">
+        <div class="form-group">
+            <label for="keyword">키워드 입력:</label>
+            <input type="text" id="keyword" name="keyword" class="form-control" placeholder="키워드를 입력하세요" required>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">등록</button>
+            <a href="/member/main" class="btn btn-secondary">메인으로 돌아가기</a>
+        </div>
+    </form>
+</div>
+
+<!-- 성공/실패 메시지 처리 -->
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var successMessage = [[${successMessage}]];
+    var errorMessage = [[${errorMessage}]];
+
+    if (successMessage) {
+        showSuccessAndRedirect();
+    } else if (errorMessage) {
+        showFailureAndStay();
+    }
+    /*]]>*/
+</script>
+</body>
+</html>
+

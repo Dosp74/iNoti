@@ -5,26 +5,34 @@
     <title>iNoti_main</title>
     <!-- Favicon 설정 -->
     <link rel="icon" href="/uni_04.png" type="image/png">
+    <!-- Bootstrap CSS 사용 (선택 사항) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <button type="button" class="btn btn-secondary" onclick="location.href='/member/info'">정보 조회</button>
-    <button type="button" class="btn btn-secondary" onclick="location.href='/member/logout'">로그아웃</button>
+<div class="container text-center mt-5">
+    <h1>iNoti 메인 페이지</h1>
+
+    <!-- 버튼 섹션 -->
+    <div class="mt-4">
+        <button type="button" class="btn btn-secondary btn-lg" onclick="location.href='/keyword/add'">키워드 설정</button>
+        <button type="button" class="btn btn-secondary btn-lg" onclick="location.href='/keyword/list'">키워드 확인</button>
+        <button type="button" class="btn btn-secondary btn-lg" onclick="location.href='/member/info'">정보 조회</button>
+    </div>
+
+    <!-- 로그아웃 버튼 -->
+    <div class="mt-4">
+        <button type="button" class="btn btn-danger" onclick="location.href='/member/logout'">로그아웃</button>
+    </div>
+
     <!-- 오류 메시지 출력 -->
-    <div th:if="${errorMessage}" style="color: red;">
+    <div th:if="${errorMessage}" style="color: red;" class="mt-3">
         <p th:text="${errorMessage}"></p>
     </div>
 
     <!-- 성공 메시지 출력 -->
-    <div th:if="${successMessage}" style="color: green;">
+    <div th:if="${successMessage}" style="color: green;" class="mt-3">
         <p th:text="${successMessage}"></p>
     </div>
-    <!-- 키워드 등록 폼 -->
-    <h2>키워드 등록</h2>
-    <form action="/keyword/add" method="post">
-        <label for="keyword">키워드 입력:</label>
-        <input type="text" id="keyword" name="keyword" required>
-        <button type="submit" class="btn btn-primary">등록</button>
-    </form>
-    <a href="/member/main">메인 화면으로 돌아가기</a>
+</div>
 </body>
 </html>
