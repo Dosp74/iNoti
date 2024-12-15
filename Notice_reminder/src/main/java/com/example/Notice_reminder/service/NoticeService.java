@@ -16,16 +16,8 @@ public class NoticeService {
 
     // 크롤링 데이터 -> NoticeDTO -> Notice Entity
     public void saveNotice(NoticeDTO noticeDTO) {
-        // 중복된 제목 확인
-        boolean exists = noticeRepository.existsByTitle(noticeDTO.getTitle());
-
-        if (!exists) {
-            // 중복되지 않은 공지사항만 저장
-            NoticeEntity noticeEntity = NoticeEntity.toNoticeEntity(noticeDTO);
-            noticeRepository.save(noticeEntity);
-        } else {
-            System.out.println("중복된 공지사항 : " + noticeDTO.getTitle());
-        }
+        NoticeEntity noticeEntity = NoticeEntity.toNoticeEntity(noticeDTO);
+        noticeRepository.save(noticeEntity);
     }
 
     // 키워드가 포함된 공지사항을 데이터베이스에서 검색

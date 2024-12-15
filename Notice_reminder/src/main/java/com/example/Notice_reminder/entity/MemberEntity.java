@@ -48,7 +48,6 @@ public class MemberEntity implements UserDetails { //UserDetails 인터페이스
     }
 
     @Override
-    //사용자가 가지고 있는 권한의 목록을 반환
     public Collection<? extends GrantedAuthority> getAuthorities(){
         if("root".equals(this.getMemberEmail()))
             return List.of(new SimpleGrantedAuthority("admin")); //이메일이 "root"라면 관리자 권한 인가
@@ -56,38 +55,32 @@ public class MemberEntity implements UserDetails { //UserDetails 인터페이스
     }
 
     @Override
-    //사용자 id 반환
     public String getUsername(){
         return memberEmail;
     }
 
     @Override
-    //사용자 password 반환
     public String getPassword(){
         return memberPassword;
     }
 
     @Override
-    //계정 만료 여부(만료되지 않았으면 true)
-    public boolean isAccountNonExpired(){
+    public boolean isAccountNonExpired(){ //계정 만료 여부
         return true;
     }
 
     @Override
-    //계정 잠금 여부(잠기지 않았으면 true)
-    public boolean isAccountNonLocked(){
+    public boolean isAccountNonLocked(){ //계정 잠금 여부
         return true;
     }
 
     @Override
-    //패스워드 만료 여부(만료되지 않았으면 true)
-    public boolean isCredentialsNonExpired(){
+    public boolean isCredentialsNonExpired(){ //패스워드 만료 여부
         return true;
     }
 
     @Override
-    //계정 사용 가능 여부(사용 가능하면 true)
-    public boolean isEnabled(){
+    public boolean isEnabled(){ //계정 사용 가능 여부
         return true;
     }
 }

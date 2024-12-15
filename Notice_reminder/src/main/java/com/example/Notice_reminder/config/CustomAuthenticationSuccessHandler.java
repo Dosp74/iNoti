@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.Collection;
 
-//인증을 성공했을 때, 실행시킬 핸들러
 @Component
 public class CustomAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
  @Override
@@ -19,13 +18,11 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
      Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 
      for (GrantedAuthority authority : authorities) {
-         //가진 권한이 'admin'이라면 /member/admin으로 이동
          if (authority.getAuthority().equals("admin")) {
              response.sendRedirect("/member/admin");
              return;
          }
      }
-     //'user'라면 /member/main으로 이동
      response.sendRedirect("/member/main");
  }
 }
