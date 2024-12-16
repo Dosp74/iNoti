@@ -88,7 +88,7 @@ public class MemberController {
     @PostMapping("/member/delete/{id}")
     public String deleteById(@PathVariable Long id) {
         memberService.deleteByid(id);
-        return "redirect:/member/login";
+        return "redirect:/member/admin";
     }
 
     @GetMapping("/")
