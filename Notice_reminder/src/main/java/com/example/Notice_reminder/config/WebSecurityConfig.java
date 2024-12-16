@@ -23,7 +23,7 @@ public class WebSecurityConfig {
     public WebSecurityCustomizer webSecurityCustomizer() {
         // 정적 리소스 (CSS, JS 등)에 대해 시큐리티 적용 제외
         return (web) -> web.ignoring()
-                .requestMatchers("/css/**", "/images/**");
+                .requestMatchers("/css/**", "/images/**", "/uni_01.png", "/uni_04.png");
     }
 
     @Bean
