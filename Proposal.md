@@ -6,15 +6,7 @@
 
 ## 1. 프로젝트 개요 (~300자)
 
- 대학생활에서 유용한 정보를 얻을 수 있는 곳은 생각보다 가까이에 있는데, 바로 학교 홈페이지의 공지사항이다. 이 프로젝트는 대학생들이 학교 홈페이지의 공지사항에서 필요한 정보를 놓치지 않도록 '공지사항 알리미' 시스템을 개발하는 데 목적이 있다. 사용자가 관심 있는 키워드를 설정하면 관련된 공지사항이 올라올 때마다 알림을 통해 확인할 수 있도록 하여 정보의 접근성을 높이며, Java로 구현해 클래스 설계, 예외 처리, 멀티스레드 프로그래밍, 정규표현식, 네트워크 프로그래밍 등을 실습하는 것을 목표로 한다.
-
-### 프로젝트의 목적
-
-대학생들이 대학생활에서 정보력을 가질 수 있도록, 자신이 설정한 키워드에 대한 공지사항이 올라오면 알림을 보내어 그에 대한 정보를 확인할 수 있게 한다.
-
-### 프로젝트의 목표
-
-'공지사항 알리미'를 Java로 구현해 클래스 설계와 멀티스레드 프로그래밍, 네트워크 프로그래밍, 정규표현식, 예외 처리 등에 대한 개념을 실습하는 것을 목표로 한다.
+대학생활에서 유용한 정보를 얻을 수 있는 곳은 생각보다 가까이에 있는데, 바로 학교 홈페이지의 공지사항이다. 이 프로젝트는 대학생들이 학교 홈페이지의 공지사항에서 필요한 정보를 놓치지 않도록 '공지사항 알리미' 시스템을 개발하는 데 목적이 있다. 사용자가 관심 있는 키워드를 설정하면 관련된 공지사항이 올라올 때마다 알림을 통해 확인할 수 있도록 하여 정보의 접근성을 높이며, Java로 구현해 클래스 설계, 예외 처리, 멀티스레드 프로그래밍, 정규표현식, 네트워크 프로그래밍 등을 실습하는 것을 목표로 한다.
 
 ## 2. 주요 기능 (~500자)
 
@@ -85,6 +77,9 @@
 <div align="center">
   <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white" />&nbsp
   <img src="https://img.shields.io/badge/-SpringBoot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />&nbsp
+  <br>
+  <img src="https://img.shields.io/badge/git-F05033.svg?style=for-the-badge&logo=git&logoColor=white" />&nbsp
+  <img src="https://img.shields.io/badge/github-181717.svg?style=for-the-badge&logo=github&logoColor=white" />
 </div>
 
 ### Git
