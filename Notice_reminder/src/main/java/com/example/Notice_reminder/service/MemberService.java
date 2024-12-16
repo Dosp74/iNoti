@@ -6,7 +6,10 @@ import com.example.Notice_reminder.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.lang.reflect.Member;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -21,6 +24,7 @@ public class MemberService {
     public Long save(MemberDTO memberDTO) {
         MemberEntity encoding_entity = MemberEntity.toMemberEntity(memberDTO);
         encoding_entity.setMemberPassword(bCryptPasswordEncoder.encode(encoding_entity.getMemberPassword()));
+        encoding_entity.setLoginAt(LocalDateTime.now());
         return memberRepository.save(encoding_entity).getId();
     }
 
@@ -47,6 +51,26 @@ public class MemberService {
 
     public void deleteByid(Long id) {
         memberRepository.deleteById(id);
+    }
+
+    @Transactional
+    public boolean updatePassword(String email, String currentPassword, String newPassword){
+
+        MemberEntity memberEntity=validatePassword(email, currentPassword);
+        if(memberEntity!=null) {
+            memberEntity.setMemberPassword(bCryptPasswordEncoder.encode(newPassword));
+            memberRepository.save(memberEntity);
+            return true;
+        }
+        return false;
+    }
+
+    public MemberEntity validatePassword(String email, String currentPassword){
+        MemberEntity memberEntity = memberRepository.findByMemberEmail(email)
+                .orElseThrow(()->new IllegalArgumentException(email));
+        if(!bCryptPasswordEncoder.matches(currentPassword, memberEntity.getPassword()))
+            return null;
+        return memberEntity;
     }
 
     public List<String> findAllEmails() {

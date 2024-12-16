@@ -10,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -35,6 +36,9 @@ public class MemberEntity implements UserDetails { //UserDetails 인터페이스
     @Column(nullable = false, updatable = false)
     private String memberName;
 
+    @Column
+    private LocalDateTime loginAt;
+
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<KeywordEntity> keywords = new ArrayList<>();
 
@@ -44,6 +48,7 @@ public class MemberEntity implements UserDetails { //UserDetails 인터페이스
         memberEntity.setMemberEmail(memberDTO.getMemberEmail());
         memberEntity.setMemberName(memberDTO.getMemberName());
         memberEntity.setMemberPassword(memberDTO.getMemberPassword());
+        memberEntity.setLoginAt(memberDTO.getLoginAt());
         return memberEntity;
     }
 

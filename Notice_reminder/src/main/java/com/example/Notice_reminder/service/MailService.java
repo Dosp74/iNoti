@@ -1,7 +1,9 @@
 package com.example.Notice_reminder.service;
 
+import com.example.Notice_reminder.entity.EmailRecordEntity;
 import com.example.Notice_reminder.entity.KeywordEntity;
 import com.example.Notice_reminder.entity.NoticeEntity;
+import com.example.Notice_reminder.repository.EmailRecordRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -11,6 +13,7 @@ import org.springframework.mail.MailException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -23,18 +26,28 @@ public class MailService {
     @Autowired
     private JavaMailSender mailSender;
     private static final Logger logger = LoggerFactory.getLogger(MailService.class);
+    private final EmailRecordRepository emailRecordRepository; // 전송 기록 저장소
 
-    public void sendMail(String to, String subject, String text) {
+    public void sendMail(String recipient, String subject, String content, String url) {
         try {
+            if (emailRecordRepository.existsByUrlAndEmail(url, recipient)) {
+                logger.info("이미 전송된 공지사항입니다. URL: {}, 이메일: {}", url, recipient);
+                return;
+            }
+
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setTo(to);
+            message.setTo(recipient);
             message.setSubject(subject);
-            message.setText(text);
+            message.setText(content);
             message.setFrom("emailservice6@naver.com"); // 이메일을 보낼 네이버 계정
 
             mailSender.send(message);
 
-            logger.info("메일 발송 완료! to: {}", to);
+            logger.info("메일 발송 완료! to: {}", recipient);
+
+            // 전송 기록 저장
+            EmailRecordEntity emailRecord = new EmailRecordEntity(url, recipient, LocalDateTime.now());
+            emailRecordRepository.save(emailRecord);
         } catch (MailException e) {
             logger.error("메일 발송 실패", e);
         }
@@ -65,16 +78,16 @@ public class MailService {
                             for (NoticeEntity notice : matchingNotices) {
                                 String subject = "[iNoti] 설정한 키워드와 관련된 공지사항이 업데이트되었습니다.";
                                 String text = "설정한 키워드와 관련된 공지사항이 업데이트되었습니다.\n\n" + notice.getTitle() + "\n" + notice.getUrl() + "\n\n지금 바로 확인해보세요!";
-                                sendMail(email, subject, text); // 메일 발송
+                                String url = notice.getUrl();
+                                sendMail(email, subject, text, url); // 메일 발송
                             }
                         }
                     }
                 }
             }
-            System.out.println("모든 사용자에 대한 메일 발송 완료");
+            logger.info("모든 사용자에 대한 메일 발송 완료");
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("메일 발송 중 오류 발생");
+            logger.error("메일 발송 중 오류 발생", e);
         }
     }
 }
