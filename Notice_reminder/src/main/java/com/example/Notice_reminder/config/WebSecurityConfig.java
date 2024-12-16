@@ -31,7 +31,7 @@ public class WebSecurityConfig {
         return http
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/", "/home", "/member/login", "/member/signup").permitAll() // 루트와 회원가입, 로그인 허용
-                        .requestMatchers("/member/admin/**").hasAuthority("admin") // 관리자 페이지 접근 제한
+                        .requestMatchers("/member/admin").hasAuthority("admin") // 관리자 페이지 접근 제한
                         .anyRequest().authenticated() // 나머지 요청은 인증 필요
                 )
                 .formLogin(form -> form

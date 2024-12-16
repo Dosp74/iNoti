@@ -77,8 +77,10 @@ public class MemberController {
     }
 
     @PostMapping("/member/delete/{id}")
-    public String deleteById(@PathVariable Long id){
+    public String deleteById(@PathVariable Long id, Principal principal){
         memberService.deleteByid(id);
+        if(principal.getName().equals("root"))
+            return "redirect:/member/admin";
         return "redirect:/member/login";
     }
 
